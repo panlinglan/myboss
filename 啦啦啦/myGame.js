@@ -72,19 +72,19 @@ guessField.focus();
 //确定按钮设置单击事件
 guessSubmit.addEventListener('click',checkGuess);
 
-// //按钮单击事件函数
-// function setGameOver(){
-//   guessField.disabled=true;
-//   guessField.disabled=true;
-//   resetButtonP=document.createElement('button');
-//   resetButtonP.textContent='开始新游戏';
-//   document.boby.appendChild(resetButtonP);
-//   resetButtonP.addEventListener('click',resetGame);
 
-// }
-
+//阻止玩家继续猜测
+//显示控件允许玩家重新开始游戏
+function setGameOver(){
+var resetButtonP=document.querySelector("div.resultParas p:last-child");
+console.log(resetButtonP);
+  resetButtonP.style.display="block";
+}
 //重置游戏
+function resetGame() {
+  guessCount = 1;
+  var resetParas = document.querySelectorAll('.resultParas p');
+  for(var i = 0 ; i < resetParas.length ; i++) {
+    resetParas[i].textContent = '';
 
-
-//}
-
+  }
